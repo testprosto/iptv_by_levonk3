@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>IPTV Web Player</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<meta charset="UTF-8">
+<title>IPTV Smart TV</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
 <body>
-  <div id="sidebar"></div>
-  <div id="player">
+<div id="app">
+  <div id="sidebar">
+    <h1>IPTV Smart TV</h1>
+    <button id="loadBtn">📂 Загрузить плейлист</button>
+    <input type="file" id="fileInput" accept=".m3u,.m3u8" hidden>
+    <input type="text" id="search" placeholder="🔍 Поиск по названию или группе">
+    <div id="groupList"></div>
+    <h3>Избранные</h3>
+    <div id="Favorites"></div>
+    <h3>Все каналы</h3>
+    <div id="channelList"></div>
+  </div>
+  <div id="playerContainer">
     <div id="now">Выберите канал</div>
     <video id="video" controls autoplay></video>
   </div>
-  <script src="script.js"></script>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
