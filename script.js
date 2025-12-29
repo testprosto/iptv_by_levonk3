@@ -1,5 +1,6 @@
 const channels = [
   {group:'Общие', name:'Animax', logo:'https://ri.zzls.xyz/bYX8NqT.png', url:'http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=bs15&checkedby:iptvcat.net'},
+  {group:'Кино', name:'test2', logo:'http://epg.one/img/4663.png', url:'http://sewv654wfcsdwfi87fwvgbngh.siauliairsavlt.pw/iptv/8DN2FWQKBVS73T/31547/index.m3u8'},
 ];
 
 
