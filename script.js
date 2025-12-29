@@ -1,3 +1,4 @@
+// Список каналов
 const channels = [
   {group:'Общие', name:'Animax', logo:'https://ri.zzls.xyz/bYX8NqT.png', url:'http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=bs15&checkedby:iptvcat.net'},
   {group:'Кино', name:'test2', logo:'http://epg.one/img/4663.png', url:'http://sewv654wfcsdwfi87fwvgbngh.siauliairsavlt.pw/iptv/8DN2FWQKBVS73T/31547/index.m3u8'},
@@ -10,12 +11,13 @@ let hls;
 
 const groups = {};
 
-// Функция для проксирования HTTP потоков через Vercel
+// Функция для проксирования всех HTTP каналов через публичный HLS-прокси
 function proxify(url) {
-  if (url.startsWith('http://')) {
-    return `https://iptv-by-levonk3-git-main-levonk3s-projects.vercel.app/api/proxy?url=${encodeURIComponent(url)}`;
+  if (url.startsWith('http://') || url.startsWith('https://')) {
+    // Бесплатный CORS/HLS прокси
+    return `https://corsproxy.io/?${encodeURIComponent(url)}`;
   }
-  return url; // если уже HTTPS, не трогаем
+  return url; // если уже безопасно
 }
 
 // Сортируем каналы по группам
@@ -24,7 +26,7 @@ channels.forEach(c => {
   groups[c.group].push(c);
 });
 
-// Создаем интерфейс боковой панели
+// Создаем боковую панель
 for (const g in groups) {
   const h = document.createElement('h3');
   h.textContent = g;
@@ -48,7 +50,7 @@ function play(ch) {
     hls = null;
   }
 
-  const url = proxify(ch.url);
+  const url = proxify(ch.url); // используем прокси
 
   if (video.canPlayType('application/vnd.apple.mpegurl')) {
     video.src = url;
