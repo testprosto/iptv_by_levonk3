@@ -20,7 +20,7 @@ export default async function handler(req, res) {
     res.setHeader("Content-Type", "application/vnd.apple.mpegurl");
     res.setHeader("Cache-Control", "no-cache");
 
-    response.body.pipe(res); // stream
+    response.body.pipe(res);
   } catch (err) {
     console.error(err);
     res.status(500).send("Error fetching URL");
