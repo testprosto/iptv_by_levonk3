@@ -1,15 +1,14 @@
-// Твой M3U плейлист (можно добавить больше каналов)
 const channels = [
   {
     name: "Animax (544p)",
-    url: "http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=bs15&checkedby:iptvcat.net",
+    // Используем CORS прокси для HTTPS
+    url: "https://corsproxy.io/?http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=bs15&checkedby:iptvcat.net",
     logo: "https://ri.zzls.xyz/bYX8NqT.png"
   }
 ];
 
 const player = document.getElementById('iptvPlayer');
 
-// Для HLS потоков (m3u8) нужно использовать hls.js
 if (Hls.isSupported()) {
   const hls = new Hls();
   hls.loadSource(channels[0].url);
