@@ -1,5 +1,5 @@
 const channels = [
-  {group:'Общие', name:'Animax', logo:'https://ri.zzls.xyz/bYX8NqT.png', url:'https://corsproxy.io/?http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=bs15&checkedby:iptvcat.net'},
+  {group:'Общие', name:'Animax', logo:'https://ri.zzls.xyz/bYX8NqT.png', url:'http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=bs15&checkedby:iptvcat.net'},
 ];
 
 
