@@ -13,10 +13,11 @@ const groups = {};
 // Проксирование HTTP каналов через Vercel API
 function proxify(url) {
   if(url.startsWith('http://')) {
-    return `https://YOUR_PROJECT_NAME.vercel.app/api/proxy?url=${encodeURIComponent(url)}`;
+    return `https://iptv-by-levonk3-git-main-levonk3s-projects.vercel.app/api/proxy?url=${encodeURIComponent(url)}`;
   }
-  return url; // HTTPS каналы остаются
+  return url;
 }
+
 
 // Сортировка каналов по группам
 channels.forEach(c => {
