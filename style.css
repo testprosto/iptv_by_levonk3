@@ -1,0 +1,10 @@
+body {
+  background-color: #0f0f0f;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.player-container {
+  margin-top: 20px;
+}
